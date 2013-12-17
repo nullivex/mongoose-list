@@ -1,13 +1,11 @@
 var mongoose = require('mongoose')
-  , schema
-
 mongoose.plugin(require('../lib/mongoose-list'))
 
-schema = new mongoose.Schema({
+exports.name = 'model'
+exports.description = 'Testing model'
+exports.model = mongoose.model('Test',new mongoose.Schema({
   name: {
     type: String,
     require: true
   }
-})
-
-module.exports = mongoose.model('Test',schema)
+}))

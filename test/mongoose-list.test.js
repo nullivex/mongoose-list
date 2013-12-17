@@ -1,5 +1,5 @@
 describe('MongooseList',function(){
-  var Model = require('./model')
+  var Model = require('./model').model
   describe('[Single Record]',function(){
     var doc
     before(function(done){
