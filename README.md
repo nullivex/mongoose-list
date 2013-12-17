@@ -1,4 +1,4 @@
-mongoose-list
+mongoose-list [![Build Status](https://travis-ci.org/snailjs/mongoose-list.png?branch=master)](https://travis-ci.org/snailjs/mongoose-list)
 =============
 
 List plugin for mongoose that allows pagination, filtering, sorting.
