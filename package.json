@@ -1,0 +1,50 @@
+{
+  "name": "mongoose-list",
+  "version": "0.1.0",
+  "description": "List plugin for mongoose that allows pagination, filtering, and sorting.",
+  "homepage": "https://github.com/snailjs/mongoose-list",
+  "bugs": "https://github.com/snailjs/mongoose-list/issues",
+  "authors": [
+    {
+      "name": "Bryan Tong",
+      "email": "contact@nullivex.com",
+      "homepage": "https://github.com/nullivex"
+    },
+    {
+      "name": "Tony Butler",
+      "email": "spudz76@gmail.com",
+      "homepage": "https://github.com/spudz76"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snailjs/mongoose-list.git"
+  },
+  "keywords": [
+    "mongoose",
+    "plugin",
+    "list",
+    "paging",
+    "pagination",
+    "sort",
+    "search"
+  ],
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.8.1",
+    "grunt-project-update": "~0.2.2",
+    "mocha": "~1.15.1",
+    "chai": "~1.8.1",
+    "jshint-stylish": "~0.1.3",
+    "mongoose": "~3.8.2"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
