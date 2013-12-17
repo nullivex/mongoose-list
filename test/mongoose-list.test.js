@@ -1,5 +1,6 @@
 describe('MongooseList',function(){
   var Model = require('./model').model
+    , async = require('async')
   describe('[Single Record]',function(){
     var doc
     before(function(done){
@@ -46,11 +47,19 @@ describe('MongooseList',function(){
     })
   })
   describe('[Multiple Records]',function(){
-    before(function(){
+    before(function(done){
+      var items = []
       for(var i=0; i<100; i++){
-        var doc = new Model({name: 'test doc'})
-        doc.save()
+        items.push({name: 'test doc'})
       }
+      async.each(
+        items,
+        function(item,next){
+          var doc = new Model(item)
+          doc.save(next)
+        },
+        done
+      )
     })
     after(function(done){
       Model.remove({name: 'test doc'},done)
