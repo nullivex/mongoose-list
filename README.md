@@ -3,6 +3,12 @@ mongoose-list [![Build Status](https://travis-ci.org/snailjs/mongoose-list.png?b
 
 List plugin for mongoose that allows pagination, filtering, sorting.
 
+## Installation
+
+```
+$ npm install mongoose-list
+```
+
 ## Usage
 
 **model.js**
