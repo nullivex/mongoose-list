@@ -85,3 +85,11 @@ Uses a Mongoose style sort string eg: `+name -author'
 * Default `''`
 
 Filter results by value applying to the `searchFields`
+
+## Changelog
+
+### 0.1.1
+* Fixed bug with searching on non string fields
+
+### 0.1.0
+* Initial Release
