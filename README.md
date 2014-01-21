@@ -88,21 +88,31 @@ Filter results by value applying to the `searchFields`
 
 Alternatively, the `find` variable can also be a custom mongoose query object like the following example:
 
-    {
-      find: {
-        $or: [
-          { field1: /something/ },
-          { field2: new RegExp('else', 'i') }
-        ]
-      }
-    }
+```js
+var query = {
+  find: {
+    $or: [
+      { field1: /something/ },
+      { field2: new RegExp('else', 'i') }
+    ]
+  }
+}
+Model.list({start: 0, limit: 10, sort: 'name', find: query},function(err,count,results){
+  if(err) throw err
+  console.log('found ' + count + 'records')
+  results.forEach(function(row){
+    console.log('name: ' + row.name)
+  })
+})
+```
 
 This allows you to perform custom and complex queries and still make use of the remaining features of this module such as pagination.
 
 ## Changelog
 
-### 0.1.2
-* Added custom `find` object support
+### 0.2.0
+* Added custom `find` object support that can be a direct mongoose query object rather than having
+one built automatically.
 
 ### 0.1.1
 * Fixed bug with searching on non string fields
