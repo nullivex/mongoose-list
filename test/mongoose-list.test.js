@@ -45,6 +45,22 @@ describe('MongooseList',function(){
         done()
       })
     })
+    it('should return records when searching using a custom query',function(done){
+      Model.list(
+        {
+          find: {
+            $or: [{name: new RegExp('notexisting', 'i')}, {name: new RegExp('test', 'i')}]
+          }
+        },
+        function(err,count,results){
+          if(err) throw err
+          expect(count).to.equal(1)
+          expect(results.length).to.equal(1)
+          expect(results[0].name).to.equal('test doc')
+          done()
+        }
+      )
+    })
   })
   describe('[Multiple Records]',function(){
     before(function(done){
@@ -98,6 +114,22 @@ describe('MongooseList',function(){
         expect(results[0].name).to.equal('test doc')
         done()
       })
+    })
+    it('should return records when searching using a custom query',function(done){
+      Model.list(
+        {
+          find: {
+            $or: [{name: new RegExp('notexisting', 'i')}, {name: new RegExp('test', 'i')}]
+          }
+        },
+        function(err,count,results){
+          if(err) throw err
+          expect(count).to.be.greaterThan(0)
+          expect(results.length).to.be.greaterThan(0)
+          expect(results[0].name).to.equal('test doc')
+          done()
+        }
+      )
     })
     it('should return only a few records when close to the end',function(done){
       Model.list({start: 95, limit: 10, sort: 'name'},function(err,count,results){
