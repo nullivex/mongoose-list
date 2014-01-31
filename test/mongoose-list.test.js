@@ -139,5 +139,29 @@ describe('MongooseList',function(){
         done()
       })
     })
+    it('should not fail with a negative start value',function(done){
+      Model.list({start: -100, limit: 10},function(err,count,results){
+        if(err) throw err
+        expect(count).to.equal(100)
+        expect(results.length).to.equal(10)
+        done()
+      })
+    })
+    it('should not fail with a negative limit value',function(done){
+      Model.list({start: 50, limit: -10},function(err,count,results){
+        if(err) throw err
+        expect(count).to.equal(100)
+        expect(results.length).to.equal(10)
+        done()
+      })
+    })
+    it('should not fail with a negative limit and start value',function(done){
+      Model.list({start: -50, limit: -10},function(err,count,results){
+        if(err) throw err
+        expect(count).to.equal(100)
+        expect(results.length).to.equal(10)
+        done()
+      })
+    })
   })
 })

@@ -110,6 +110,9 @@ This allows you to perform custom and complex queries and still make use of the 
 
 ## Changelog
 
+### 0.2.1
+* Fixed issue with plugin crashing with out of range start and limit values.
+
 ### 0.2.0
 * Added custom `find` object support that can be a direct mongoose query object rather than having
 one built automatically.
