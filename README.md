@@ -84,6 +84,12 @@ Uses a Mongoose style sort string eg: `+name -author'
 * Variable `find`
 * Default `''`
 
+### Populate
+* Variable `populate`
+* Default `null`
+
+Uses a Mongoose populate to populate objectIds
+
 Filter results by value applying to the `searchFields`
 
 Alternatively, the `find` variable can also be a custom mongoose query object like the following example:
