@@ -90,6 +90,8 @@ Uses a Mongoose style sort string eg: `+name -author'
 
 Uses a Mongoose populate to populate objectIds
 
+## Searching
+
 Filter results by value applying to the `searchFields`
 
 Alternatively, the `find` variable can also be a custom mongoose query object like the following example:
@@ -115,6 +117,9 @@ Model.list({start: 0, limit: 10, sort: 'name', find: query},function(err,count,r
 This allows you to perform custom and complex queries and still make use of the remaining features of this module such as pagination.
 
 ## Changelog
+
+### 0.2.2
+* Adds populate feature to list plugin.
 
 ### 0.2.1
 * Fixed issue with plugin crashing with out of range start and limit values.
