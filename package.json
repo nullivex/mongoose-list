@@ -1,6 +1,6 @@
 {
   "name": "mongoose-list",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "List plugin for mongoose that allows pagination, filtering, and sorting.",
   "homepage": "https://github.com/snailjs/mongoose-list",
   "bugs": "https://github.com/snailjs/mongoose-list/issues",
